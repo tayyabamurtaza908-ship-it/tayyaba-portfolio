@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tayyaba's portfolio for web development, graphic design, and digital advertising.">
+
+  <title>Tayyaba | Creative Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .profile-photo {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #EDE9FE;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ===== COLOR THEME ===== */
+    :root {
+      --primary: #172554;
+      --accent: #7C3AED;
+      --accent-light: #EDE9FE;
+      --background: #F8FAFC;
+      --white: #FFFFFF;
+      --text: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --shadow: 0 12px 35px rgba(23, 37, 84, 0.08);
+    }
+
+    /* ===== GENERAL ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Manrope", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .kicker,
+    .section-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .navlinks a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .navlinks a:hover {
+      color: var(--accent);
+    }
+
+    .navlinks .nav-cta {
+      background: var(--accent);
+      color: var(--white);
+      padding: 11px 19px;
+      border-radius: 8px;
+    }
+
+    .navlinks .nav-cta:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--accent);
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn.light {
+      color: var(--primary);
+      background: var(--white);
+      border-color: var(--border);
+    }
+
+    .btn.light:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--white);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 65px;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 8px 13px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .hero p {
+      max-width: 540px;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .small-note {
+      margin-top: 28px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* ===== HERO VISUAL ===== */
+    .visual {
+      min-height: 390px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-bg {
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      border-radius: 45% 55% 58% 42%;
+      background: linear-gradient(145deg, #EDE9FE, #DBEAFE);
+      transform: rotate(-8deg);
+    }
+
+    .profile-card {
+      position: relative;
+      width: min(310px, 85%);
+      padding: 15px;
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-photo {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(145deg, #F1F5F9, #EDE9FE);
+      color: var(--primary);
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .profile-photo small {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .profile-info {
+      padding: 15px 5px 4px;
+    }
+
+    .profile-info strong {
+      display: block;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .profile-info small {
+      color: var(--muted);
+    }
+
+    .floating {
+      position: absolute;
+      bottom: 25px;
+      left: -10px;
+      background: var(--white);
+      color: var(--primary);
+      padding: 14px 18px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .floating span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    /* ===== ABOUT ===== */
+    #about {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .about-quote {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+
+    .about-copy h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      background: var(--accent-light);
+      color: var(--primary);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ===== SECTION HEADINGS ===== */
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .section-top h2,
+    .projects-heading h2 {
+      font-size: clamp(30px, 4vw, 40px);
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      max-width: 410px;
+      font-size: 14px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: 0.25s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #C4B5FD;
+    }
+
+    .num {
+      display: block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    .skill h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .skill p {
+      font-size: 13px;
+    }
+
+    /* ===== SERVICES ===== */
+    #services {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      transition: 0.25s;
+    }
+
+    .service:hover {
+      border-color: #C4B5FD;
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      font-size: 13px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-section {
+      background: var(--background);
+    }
+
+    .projects-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+
+    .projects-heading h2 {
+      margin-bottom: 13px;
+    }
+
+    .projects-heading h2 span {
+      color: var(--accent);
+    }
+
+    .projects-heading p {
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      box-shadow: 0 5px 20px rgba(23, 37, 84, 0.04);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #C4B5FD;
+    }
+
+    .project-label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 5px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .project-top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .project-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .project-arrow {
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .project-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 25px;
+      margin-bottom: 23px;
+    }
+
+    .lipslay-icon {
+      background: var(--accent);
+    }
+
+    .ecommerce-icon {
+      background: #0F766E;
+    }
+
+    .project-category {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .project-footer {
+      width: 100%;
+      padding-top: 17px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .project-footer span {
+      color: var(--muted);
+    }
+
+    .project-footer strong {
+      color: var(--primary);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-section {
+      background: var(--primary);
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .contact-section .kicker {
+      color: #C4B5FD;
+    }
+
+    .contact-section h2 {
+      color: var(--white);
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 14px;
+    }
+
+    .contact-section>.wrap>p {
+      color: #CBD5E1;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .contact-details {
+      max-width: 650px;
+      margin: 32px auto 0;
+      padding: 25px 30px;
+      background: var(--white);
+      border-radius: 14px;
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-symbol {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item a {
+      color: var(--accent);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #101B3D;
+      color: var(--white);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      font-size: 12px;
+    }
+
+    .footer-inner span {
+      color: #CBD5E1;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 900px) {
+      .navlinks {
+        gap: 14px;
+      }
+
+      .navlinks a {
+        font-size: 12px;
+      }
+
+      .hero {
+        gap: 30px;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      section {
+        padding: 65px 0;
+      }
+
+      nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .navlinks {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 17px;
+      }
+
+      .navlinks a {
+        font-size: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        gap: 25px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .visual {
+        min-height: 350px;
+      }
+
+      .profile-photo {
+        min-height: 220px;
+      }
+
+      .floating {
+        left: 0;
+        bottom: 10px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .section-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .skill-grid,
+      .service-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 23px;
+      }
+
+      .contact-details {
+        padding: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="wrap">
+      <a class="logo" href="#home">tayyaba<span>.</span></a>
+
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="#contact">Hire Me ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow">CREATIVE DESIGN &amp; WEB DEVELOPMENT</div>
+
+        <h1>I build digital experiences that <em>feel right.</em></h1>
+
+        <p>
+          Hi, I'm Tayyaba — a creative designer and website developer helping brands
+          bring their ideas to life through thoughtful design, engaging content,
+          and clean websites.
+        </p>
+
+        <div class="actions">
+          <a class="btn" href="#contact">Hire Me ↗</a>
+          <a class="btn light" href="#projects">Explore My Work</a>
+        </div>
+
+        <div class="small-note">
+          Websites · Social Media Design · Digital Advertising
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="visual-bg"></div>
+
+        <div class="profile-card">
+          <div class="profile-photo">
+
+            <div class="profile-photo">
+              <img src="images/tayyaba.png" alt="Tayyaba Murtaza">
+            </div>
+
+          </div>
+
+          <div class="profile-info">
+            <strong>Tayyaba Murtaza</strong>
+            <small>Designer &amp; Web Developer</small>
+          </div>
+        </div>
+
+        <div class="floating">
+          Creative ideas, made real
+          <span>Design with a human touch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="kicker">A little about me</div>
+          <div class="about-quote">
+            Good design is more than how it looks — it's how it makes people feel.
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <h2>Creative thinking.<br>Practical solutions.</h2>
+
+          <p>
+            I work across website development, graphic design, advertising,
+            and social media content. I enjoy turning ideas into clear,
+            attractive visuals and user-friendly online experiences.
+          </p>
+
+          <p>
+            My approach combines creativity, attention to detail, and a human
+            touch — so every design feels purposeful and every website is easy to explore.
+          </p>
+
+          <div class="chips">
+            <span class="chip">Creative</span>
+            <span class="chip">Detail-focused</span>
+            <span class="chip">Client-centered</span>
+            <span class="chip">Always learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="wrap">
+        <div class="section-top">
+          <div>
+            <div class="kicker">What I bring</div>
+            <h2>My skills</h2>
+          </div>
+
+          <p class="section-intro">
+            A blend of technical skills and creative thinking to help businesses
+            build a stronger online presence.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill">
+            <span class="num">01 / WEB</span>
+            <h3>Website Development</h3>
+            <p>Responsive, user-friendly website layouts.</p>
+          </article>
+
+          <article class="skill">
+            <span class="num">02 / DESIGN</span>
+            <h3>Graphic Design</h3>
+            <p>Visuals that communicate clearly and beautifully.</p>
+          </article>
+
+          <article class="skill">
+            <span class="num">03 / SOCIAL</span>
+            <h3>Social Media Creatives</h3>
+            <p>Posts, stories, banners, and campaign graphics.</p>
+          </article>
+
+          <article class="skill">
+            <span class="num">04 / ADS</span>
+            <h3>Digital Advertising</h3>
+            <p>Attention-grabbing ad creatives for brands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-top">
+          <div>
+            <div class="kicker">How I can help</div>
+            <h2>Services I offer</h2>
+          </div>
+
+          <p class="section-intro">
+            Flexible creative support for businesses, personal brands,
+            and growing online stores.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-icon">⌘</div>
+            <h3>Website Creation</h3>
+            <p>Modern portfolio, business, and online-store websites designed with clarity and usability in mind.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">✳</div>
+            <h3>Social Media Design</h3>
+            <p>Instagram and Facebook posts, stories, promotional graphics, and branded content.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">↗</div>
+            <h3>Advertising Creatives</h3>
+            <p>Campaign visuals that highlight your offer and help your message stand out.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">▧</div>
+            <h3>Product Posts</h3>
+            <p>Clean, appealing product visuals for shops, catalogues, and online promotions.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">▤</div>
+            <h3>Banners &amp; Covers</h3>
+            <p>Website banners, social covers, and promotional layouts that fit your brand.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">◇</div>
+            <h3>Packaging Design</h3>
+            <p>Thoughtful packaging visuals that give products a consistent, polished look.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREE PROJECTS -->
+    <section class="projects-section" id="projects">
+      <div class="wrap">
+        <div class="projects-heading">
+          <span class="section-label">MY PORTFOLIO</span>
+          <h2>Selected <span>Projects</span></h2>
+          <p>Three selected projects that showcase my creative and development skills.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- FIRST PROJECT -->
+          <a href="tadhem.html" class="project-card">
+            <span class="project-label">FIRST PROJECT</span>
+
+            <div class="project-top">
+              <span class="project-number">01</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <div class="project-icon">T.</div>
+
+            <span class="project-category">WEB DEVELOPMENT</span>
+            <h3>Tadhem</h3>
+            <p>A digital project focused on a clean, modern and user-friendly experience.</p>
+
+            <div class="project-footer">
+              <span>Duration</span>
+              <strong>4 Months</strong>
+            </div>
+          </a>
+
+          <!-- SECOND PROJECT -->
+          <a href="lipslay.html" class="project-card">
+            <span class="project-label">SECOND PROJECT</span>
+
+            <div class="project-top">
+              <span class="project-number">02</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <div class="project-icon lipslay-icon">L.</div>
+
+            <span class="project-category">DIGITAL MARKETPLACE</span>
+            <h3>LipsLay</h3>
+            <p>A marketplace project combining website development, advertising and social media.</p>
+
+            <div class="project-footer">
+              <span>Duration</span>
+              <strong>3 Months</strong>
+            </div>
+          </a>
+
+          <!-- THIRD PROJECT -->
+          <a href="ecommerce.html" class="project-card">
+            <span class="project-label">THIRD PROJECT</span>
+
+            <div class="project-top">
+              <span class="project-number">03</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <div class="project-icon ecommerce-icon">↗</div>
+
+            <span class="project-category">E-COMMERCE DEVELOPMENT</span>
+            <h3>E-commerce Store</h3>
+            <p>An online shopping store concept designed for a smooth and user-friendly shopping experience.</p>
+
+            <div class="project-footer">
+              <span>Duration</span>
+              <strong>2 Months</strong>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="wrap">
+        <div class="kicker">GET IN TOUCH</div>
+        <h2>Let's Work Together</h2>
+        <p>Have a project in mind? Feel free to contact me. I'd love to hear about it.</p>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <div class="contact-symbol">@</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:tayyabamurtaza908@gmail.com">
+                tayyabamurtaza908@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-symbol">☎</div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+923267615530">+92 326 7615530</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-symbol">f</div>
+            <div>
+              <strong>Facebook</strong>
+              <a href="https://www.facebook.com/profile.php?id=61594853884941" target="_blank"
+                rel="noopener noreferrer">
+                Visit My Facebook Profile ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Tayyaba Murtaza. All rights reserved.</span>
+      <span>Designed with care ✳</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
